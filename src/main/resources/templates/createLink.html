@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head th:replace="fragments :: head"><title>s30174-Create</title></head>
+<body class="p-4">
+<form method="get" action="/links/create">
+    <label>
+        <select name="lang" onchange="this.form.submit()" class="form-select form-select-sm">
+            <option value="en" th:selected="${currentLang == 'en'}" th:text="${english}">English</option>
+            <option value="pl" th:selected="${currentLang == 'pl'}" th:text="${polish}">Polish</option>
+            <option value="de" th:selected="${currentLang == 'de'}" th:text="${german}">German</option>
+        </select>
+    </label>
+</form>
+<form method="post" action="/links" th:object="${postLinkDTO}">
+    <div class="mb-3">
+        <label class="form-label" th:text="${label_name}">Name</label>
+        <label>
+            <input class="form-control" th:field="*{name}" name="name"/>
+        </label>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" th:text="${label_url}">URL</label>
+        <label>
+            <input class="form-control" th:field="*{targetUrl}" name="redirectUrl"/>
+        </label>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" th:text="${label_password}">Password</label>
+        <label>
+            <input type="password" class="form-control" th:field="*{password}" name="password"/>
+        </label>
+    </div>
+    <button class="btn btn-primary" type="submit" th:text="${button_create}">Create</button>
+</form>
+</body>
+</html>

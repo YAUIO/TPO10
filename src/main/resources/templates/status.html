@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head th:replace="fragments :: head"><title th:text="${errorTitle}">Status</title></head>
+<body class="p-4">
+<div class="container">
+    <h2 class="text-danger" th:text="${errorTitle}"></h2>
+    <p th:text="${errorMessage}"></p>
+
+    <div th:utext="${errorHtml}"></div>
+
+    <a href="/links/create" class="btn btn-primary mt-3">Go Home</a>
+</div>
+</body>
+</html>

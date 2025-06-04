@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: TPO-10
+  datasource:
+    url: jdbc:h2:file:./links
+    username: s30174
+    password: test
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
